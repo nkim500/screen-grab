@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Long-lived IPC server entry point for the brain. Runs from source via tsx.
+set -euo pipefail
+# Ensure node + claude are discoverable even when invoked under a launchd-style
+# parent that hasn't been given a useful PATH. Without this the daemon-spawned
+# brain crash-loops with `exec: node: not found` whenever launchctl setenv PATH
+# wasn't run for the current login session.
+# Auto-discover the highest installed nvm node version so a future `nvm install`
+# is picked up without editing this file.
+NVM_LATEST_BIN="$(ls -d "${HOME}/.nvm/versions/node/v"*/bin 2>/dev/null | sort -V | tail -n 1)"
+export PATH="${NVM_LATEST_BIN:+${NVM_LATEST_BIN}:}${HOME}/.local/bin:/opt/homebrew/bin:/usr/local/bin:${PATH:-/usr/bin:/bin}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# `node --import tsx` resolves `tsx` from the current working directory's
+# node_modules, so cd into the brain module first. Otherwise the brain
+# only works when invoked from screen-grab-brain/, which the daemon's
+# Process spawn does not guarantee.
+cd "${SCRIPT_DIR}/.."
+exec node --import tsx "${SCRIPT_DIR}/../src/ipc.ts" "$@"

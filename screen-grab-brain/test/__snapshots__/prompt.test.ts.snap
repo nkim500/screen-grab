@@ -1,0 +1,62 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`buildPrompt > matches snapshot for a stable input 1`] = `
+{
+  "messages": [
+    {
+      "content": [
+        {
+          "text": "Example context: reply to a coworker about a slipping deadline
+Audience: internal teammate
+Length: short
+
+Draft a reply.",
+          "type": "text",
+        },
+      ],
+      "role": "user",
+    },
+    {
+      "content": [
+        {
+          "text": "hey — yeah, friday is tight. can we push to monday?",
+          "type": "text",
+        },
+      ],
+      "role": "assistant",
+    },
+    {
+      "content": [
+        {
+          "text": "App: Mail
+Window: Reply: Q2 Roadmap
+Focused field role: AXTextArea
+Focused field current text: (empty)
+
+Visible context on screen:
+  - [AXStaticText] From: Sarah
+  - [AXStaticText] Hey — quick question on the Q2 roadmap timing...
+
+Draft for the focused field, in the user's voice.",
+          "type": "text",
+        },
+      ],
+      "role": "user",
+    },
+  ],
+  "system": "You are a writing assistant that drafts text in the user's exact voice.
+Output is pasted verbatim into the focused field — no preamble, no
+explanation, no meta-commentary, no markdown unless the destination supports it.
+Match the tone, sentence length, vocabulary, and quirks shown in the user's
+style guide and few-shot examples below.
+
+Source hierarchy (apply in order):
+1. Focused field text (if present) is the SEED — continue from where it ends.
+2. Spoken intent (if present) is the DIRECTION — what to say next, or what to say if no seed.
+3. Screen context and evidence about the user are REFERENCE only — match tone,
+   register, and audience. Never lift content from them into the draft.
+
+Style guide:
+I write short, direct sentences. Lowercase-leaning.",
+}
+`;

@@ -1,0 +1,14 @@
+{
+  "reqId": "test-r1",
+  "app": "Mail",
+  "windowTitle": "Reply: Q2 Roadmap",
+  "intent": "draft",
+  "axTree": {
+    "focusedFieldRole": "AXTextArea",
+    "focusedFieldText": "",
+    "siblingTexts": [
+      { "role": "AXStaticText", "text": "From: Sarah" },
+      { "role": "AXStaticText", "text": "Hey — quick question on the Q2 roadmap timing..." }
+    ]
+  }
+}

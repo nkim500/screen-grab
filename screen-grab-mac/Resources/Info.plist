@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>screen-grab</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.nkim.screen-grab</string>
+    <key>CFBundleVersion</key>
+    <string>0.3.0</string>
+    <key>CFBundleShortVersionString</key>
+    <string>0.3.0</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleExecutable</key>
+    <string>screen-grab-mac</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>13.0</string>
+    <key>LSUIElement</key>
+    <true/>
+    <key>NSHumanReadableCopyright</key>
+    <string>Personal tool. Not for distribution.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>screen-grab needs microphone access to transcribe what you say while holding Right Cmd.</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>screen-grab uses on-device speech recognition to transcribe your dictation into text the AI can polish.</string>
+</dict>
+</plist>

@@ -1,0 +1,40 @@
+# Personal voice data — gitignored, kept local. Anchored to repo root so
+# test fixtures like screen-grab-brain/test/fixtures/voice/ aren't caught.
+/voice/
+
+# Node
+node_modules/
+dist/
+*.log
+.vite/
+
+# macOS
+.DS_Store
+
+# Agent / IDE
+.claude/
+.vscode/
+.idea/
+
+# Local handoff / scratch notes
+HANDOFF.md
+NOTES.md
+SCRATCH.md
+ROADMAP.md
+docs/NEXT_AGENT_BRIEFING.md
+
+# Brainstorming visual companion mockups
+.superpowers/
+
+# Plans / specs / brainstorm artifacts — kept local for new files.
+# (Files already committed under this dir remain tracked; remove explicitly with
+# `git rm --cached <path>` if you ever want them off the repo too.)
+docs/superpowers/
+
+# Telemetry (lives under voice/, but pin explicitly in case voice/ moves)
+**/telemetry.jsonl
+**/telemetry/raw/
+
+# Local secrets (ANTHROPIC_API_KEY etc.). Anchored to repo root only.
+/.env.local
+/.env

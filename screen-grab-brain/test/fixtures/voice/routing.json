@@ -1,0 +1,4 @@
+[
+  { "match": { "app": "Mail" }, "bucket": "gmail-work" },
+  { "match": { "app": "Google Chrome", "windowTitleContains": "linkedin.com" }, "bucket": "linkedin" }
+]

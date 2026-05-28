@@ -1,0 +1,4 @@
+{
+  "backend": "openai",
+  "model": "gpt-4"
+}

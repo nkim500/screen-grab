@@ -1,0 +1,6 @@
+{
+  "backend": "anthropic-api",
+  "model": "claude-opus-4-7",
+  "voiceDir": "${repoRoot}/voice",
+  "telemetryPath": "${repoRoot}/voice/telemetry.jsonl"
+}
